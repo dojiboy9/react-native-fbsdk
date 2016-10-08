@@ -182,33 +182,4 @@ RCT_EXPORT_METHOD(sendVideoPreviewWithCaption:(NSString *) pathForResource
   [self sendUIImageWithCaption:image metadata:metadata caption:caption];
   resolve(@YES);
 }
-
-#pragma mark - FBSDKSharingDelegate
-
-- (void)sharer:(id<FBSDKSharing>)sharer didCompleteWithResults:(NSDictionary *)results
-{
-  if (_showResolve) {
-    _showResolve(results);
-    _showResolve = nil;
-  }
-  _showReject = nil;
-}
-
-- (void)sharer:(id<FBSDKSharing>)sharer didFailWithError:(NSError *)error
-{
-  if (_showReject) {
-    _showReject(@"FacebookSDK", @"MessageDialog encounters error", error);
-    _showReject = nil;
-  }
-  _showResolve = nil;
-}
-
-- (void)sharerDidCancel:(id<FBSDKSharing>)sharer
-{
-  if (_showResolve) {
-    _showResolve( @{@"isCancelled": @YES});
-    _showResolve = nil;
-  }
-  _showReject = nil;
-}
 @end
