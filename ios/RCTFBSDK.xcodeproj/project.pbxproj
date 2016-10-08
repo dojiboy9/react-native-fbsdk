@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F5BA3351DA75E9F00F0B11D /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5BA3341DA75E9F00F0B11D /* FBSDKMessengerShareKit.framework */; };
+		0F5BA3391DA75EC000F0B11D /* RCTFBSDKMessengerSharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5BA3381DA75EC000F0B11D /* RCTFBSDKMessengerSharer.m */; };
 		93B905C21D2D987F0013CC92 /* RCTFBSDKGraphRequestConnectionContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B905C11D2D987F0013CC92 /* RCTFBSDKGraphRequestConnectionContainer.m */; };
 		93E0043A1CE3C33F000598E3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E004371CE3C33F000598E3 /* FBSDKCoreKit.framework */; };
 		93E0043B1CE3C33F000598E3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E004381CE3C33F000598E3 /* FBSDKLoginKit.framework */; };
@@ -46,6 +48,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0F5BA3341DA75E9F00F0B11D /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKMessengerShareKit.framework; path = ../../../Documents/FacebookSDK/FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
+		0F5BA3371DA75EC000F0B11D /* RCTFBSDKMessengerSharer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCTFBSDKMessengerSharer.h; path = messenger_share/RCTFBSDKMessengerSharer.h; sourceTree = "<group>"; };
+		0F5BA3381DA75EC000F0B11D /* RCTFBSDKMessengerSharer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCTFBSDKMessengerSharer.m; path = messenger_share/RCTFBSDKMessengerSharer.m; sourceTree = "<group>"; };
 		9350E0F11CE3B0920041D815 /* libRCTFBSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTFBSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B905C01D2D987F0013CC92 /* RCTFBSDKGraphRequestConnectionContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCTFBSDKGraphRequestConnectionContainer.h; path = core/RCTFBSDKGraphRequestConnectionContainer.h; sourceTree = "<group>"; };
 		93B905C11D2D987F0013CC92 /* RCTFBSDKGraphRequestConnectionContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCTFBSDKGraphRequestConnectionContainer.m; path = core/RCTFBSDKGraphRequestConnectionContainer.m; sourceTree = "<group>"; };
@@ -98,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F5BA3351DA75E9F00F0B11D /* FBSDKMessengerShareKit.framework in Frameworks */,
 				93E0043A1CE3C33F000598E3 /* FBSDKCoreKit.framework in Frameworks */,
 				93E0043B1CE3C33F000598E3 /* FBSDKLoginKit.framework in Frameworks */,
 				93E0043C1CE3C33F000598E3 /* FBSDKShareKit.framework in Frameworks */,
@@ -107,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F5BA3361DA75EAF00F0B11D /* messenger_share */ = {
+			isa = PBXGroup;
+			children = (
+				0F5BA3371DA75EC000F0B11D /* RCTFBSDKMessengerSharer.h */,
+				0F5BA3381DA75EC000F0B11D /* RCTFBSDKMessengerSharer.m */,
+			);
+			name = messenger_share;
+			sourceTree = "<group>";
+		};
 		9350E0E81CE3B0920041D815 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +142,7 @@
 		9350E0F31CE3B0920041D815 /* RCTFBSDK */ = {
 			isa = PBXGroup;
 			children = (
+				0F5BA3361DA75EAF00F0B11D /* messenger_share */,
 				93E004DA1CE3D286000598E3 /* core */,
 				93E004E81CE3D2A7000598E3 /* login */,
 				93E004F21CE3D2BB000598E3 /* share */,
@@ -137,6 +153,7 @@
 		93E0043D1CE3C34B000598E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0F5BA3341DA75E9F00F0B11D /* FBSDKMessengerShareKit.framework */,
 				93E004371CE3C33F000598E3 /* FBSDKCoreKit.framework */,
 				93E004381CE3C33F000598E3 /* FBSDKLoginKit.framework */,
 				93E004391CE3C33F000598E3 /* FBSDKShareKit.framework */,
@@ -277,6 +294,7 @@
 				93E004EF1CE3D2B4000598E3 /* RCTConvert+FBSDKLogin.m in Sources */,
 				93E005101CE3D2D3000598E3 /* RCTFBSDKLikeControlManager.m in Sources */,
 				93E005161CE3D2D3000598E3 /* RCTFBSDKShareHelper.m in Sources */,
+				0F5BA3391DA75EC000F0B11D /* RCTFBSDKMessengerSharer.m in Sources */,
 				93E005141CE3D2D3000598E3 /* RCTFBSDKShareButtonManager.m in Sources */,
 				93E0050C1CE3D2D3000598E3 /* RCTFBSDKAppGroupAddDialog.m in Sources */,
 				93E005131CE3D2D3000598E3 /* RCTFBSDKShareAPI.m in Sources */,

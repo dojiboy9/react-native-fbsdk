@@ -38,6 +38,7 @@ exports.GraphRequestManager = require('./FBGraphRequestManager');
 exports.JoinAppGroupDialog = require('./FBJoinAppGroupDialog');
 exports.LoginManager = require('./FBLoginManager');
 exports.MessageDialog = require('./FBMessageDialog');
+exports.MessengerSharer = require('./FBMessengerSharer');
 exports.ShareApi = require('./FBShareApi');
 exports.ShareDialog = require('./FBShareDialog');
 

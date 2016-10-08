@@ -89,6 +89,7 @@ myProj.parse(function (err) {
   const target = myProj.getFirstTarget().uuid;
   myProj.addFramework('./ios/Frameworks/FBSDKCoreKit.framework', { 'customFramework' : true, 'target' : target, 'link' : true });
   myProj.addFramework('./ios/Frameworks/FBSDKShareKit.framework', { 'customFramework' : true, 'target' : target, 'link' : true });
+  myProj.addFramework('./ios/Frameworks/FBSDKMessengerShareKit.framework', { 'customFramework' : true, 'target' : target, 'link' : true });
   myProj.addFramework('./ios/Frameworks/FBSDKLoginKit.framework', { 'customFramework' : true, 'target' : target, 'link' : true });
 
   // WARNING: this will overwrite any existing search paths
