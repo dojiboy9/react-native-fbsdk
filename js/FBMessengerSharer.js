@@ -38,7 +38,6 @@ module.exports = {
             metadata = JSON.stringify(metadata);
         }
         MessengerSharer.send(type, filePath, metadata);
-        return true;
     } else {
         throw new Error(`
         "${type}" is not a valid type for this method.
@@ -54,7 +53,6 @@ module.exports = {
         metadata = JSON.stringify(metadata);
     }
     MessengerSharer.sendImageWithCaption(filePath, metadata, caption);
-    return true;
   },
 
   /**
@@ -65,7 +63,6 @@ module.exports = {
         metadata = JSON.stringify(metadata);
     }
     MessengerSharer.sendVideoPreviewWithCaption(filePath, metadata, caption);
-    return true;
   },
 
   ShareType

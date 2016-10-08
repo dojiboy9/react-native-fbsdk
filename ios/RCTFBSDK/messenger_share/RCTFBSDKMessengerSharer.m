@@ -28,8 +28,8 @@
 
 @implementation RCTFBSDKMessengerSharer
 {
-  RCTPromiseResolveBlock _showResolve;
-  RCTPromiseRejectBlock _showReject;
+  // RCTPromiseResolveBlock _showResolve;
+  // RCTPromiseRejectBlock _showReject;
 }
 
 RCT_EXPORT_MODULE(FBMessengerSharer);
@@ -177,7 +177,7 @@ RCT_EXPORT_METHOD(sendVideoPreviewWithCaption:(NSString *) pathForResource
                  )
 {
   UIImage * image = [self thumbnailFromVideoAtURL:[NSURL URLWithString:pathForResource]
-                          atTime:CMTimeMakeWithSeconds(0.5, 600)];
+                          atTime:CMTimeMakeWithSeconds(0.0, 600)];
 
   [self sendUIImageWithCaption:image metadata:metadata caption:caption];
   resolve(@YES);
