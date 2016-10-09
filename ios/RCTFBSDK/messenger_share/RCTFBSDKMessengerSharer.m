@@ -53,17 +53,27 @@ RCT_EXPORT_MODULE(FBMessengerSharer);
 #pragma mark - Helper method
 - (UIImage*) drawText:(NSString*) text
              inImage:(UIImage*)  image
-             atPoint:(CGPoint)   point
-             withFont:(UIFont*)   font
+             atHeight:(CGFloat)  y
+             withFont:(UIFont*)  font
+             withPadding:(CGFloat)padding
 {
     UIGraphicsBeginImageContext(image.size);
     [image drawInRect:CGRectMake(0,0,image.size.width,image.size.height)];
-    CGRect rect = CGRectMake(point.x, point.y,
-                             image.size.width, image.size.height);
-    [[UIColor blackColor] set];
+
+    // Draw the translucent-black rectangle surrounding it
+    [[UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.60f] set];
     CGContextFillRect(UIGraphicsGetCurrentContext(), 
-                      CGRectMake(0, (image.size.height-[text sizeWithFont:font].height), 
-                                 image.size.width, image.size.height));
+                      CGRectMake(0,
+                                 y,
+                                 image.size.width,
+                                 2*padding + [text sizeWithFont:font].height));
+
+    // Draw the text
+    CGRect rect = CGRectMake((image.size.width - [text sizeWithFont:font].width) / 2.0,
+                             y + padding,
+                             [text sizeWithFont:font].width,
+                             [text sizeWithFont:font].height);
+
     [[UIColor whiteColor] set];
     [text drawInRect:CGRectIntegral(rect) withFont:font]; 
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -74,12 +84,13 @@ RCT_EXPORT_MODULE(FBMessengerSharer);
 
 - (int) maxFontSize:(NSString*) text
              inImage:(UIImage*) image
+             withPadding:(CGFloat) padding
 {
     int low = 1;
     int high = 1000;
     while(low < high) {
       int k = (low + high + 1)/2;
-      int width = [text sizeWithFont:[UIFont boldSystemFontOfSize:k]].width;
+      int width = [text sizeWithFont:[UIFont boldSystemFontOfSize:k]].width + 2*padding;
       if (width >= image.size.width) {
         high = k-1;
       } else {
@@ -110,12 +121,14 @@ RCT_EXPORT_MODULE(FBMessengerSharer);
               metadata:(NSString *) metadata
               caption:(NSString *) caption
 {
-  int maxFontSize = [self maxFontSize:caption inImage:image];
+  CGFloat padding = 30;
+  int maxFontSize = [self maxFontSize:caption inImage:image withPadding:padding];
   UIFont *font = [UIFont boldSystemFontOfSize:maxFontSize];
   image = [self drawText:caption
                 inImage:image
-                atPoint:CGPointMake(0, image.size.height - [caption sizeWithFont:font].height)
-                withFont:font];
+                atHeight:(image.size.height*0.75f - [caption sizeWithFont:font].height - 2*padding)
+                withFont:font
+                withPadding:padding];
 
   FBSDKMessengerShareOptions *options = [[FBSDKMessengerShareOptions alloc] init];
   options.metadata = metadata;
