@@ -55,6 +55,7 @@ public class FBSDKPackage implements ReactPackage {
                 new FBJoinAppGroupDialogModule(reactContext, mCallbackManager),
                 new FBLoginManagerModule(reactContext, mCallbackManager),
                 new FBMessageDialogModule(reactContext, mCallbackManager),
+                new FBMessengerSharerModule(reactContext, mCallbackManager),
                 new FBShareAPIModule(reactContext),
                 new FBShareDialogModule(reactContext, mCallbackManager)
         );
