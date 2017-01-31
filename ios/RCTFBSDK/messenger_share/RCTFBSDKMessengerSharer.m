@@ -18,7 +18,7 @@
 
 #import "RCTFBSDKMessengerSharer.h"
 
-#import <RCTUtils.h>
+#import <React/RCTUtils.h>
 #import <CoreMedia/CMTime.h>
 #import <AVFoundation/AVAsset.h>
 #import <AVFoundation/AVAssetImageGenerator.h>
