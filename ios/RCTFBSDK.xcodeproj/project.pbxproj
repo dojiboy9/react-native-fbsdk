@@ -388,8 +388,6 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../../react/**",
-					"${SRCROOT}/../../react-native/React/**",
 					"${SRCROOT}/../../../ios/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -411,8 +409,6 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../../react/**",
-					"${SRCROOT}/../../react-native/React/**",
 					"${SRCROOT}/../../../ios/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
